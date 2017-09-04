@@ -8,11 +8,9 @@ import android.support.v7.widget.RecyclerView
 import net.borkiss.weatherappkotlin.R
 import net.borkiss.weatherappkotlin.data.ForecastRequest
 import net.borkiss.weatherappkotlin.domain.commands.RequestForecastCommand
+import net.borkiss.weatherappkotlin.domain.model.Forecast
 import net.borkiss.weatherappkotlin.ui.adapters.ForecastListAdapter
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.find
-import org.jetbrains.anko.longToast
-import org.jetbrains.anko.uiThread
+import org.jetbrains.anko.*
 
 private val items = listOf(
     "Mon 6/23 - Sunny - 31/17",
@@ -35,7 +33,12 @@ class MainActivity : AppCompatActivity() {
         doAsync {
             val result = RequestForecastCommand("01000").execute()
             uiThread {
-                forecastList.adapter = ForecastListAdapter(result)
+                forecastList.adapter = ForecastListAdapter(result,
+                        object: ForecastListAdapter.OnItemClickListener {
+                            override fun invoke(forecast: Forecast) {
+                                toast(forecast.date)
+                            }
+                        })
             }
         }
 
