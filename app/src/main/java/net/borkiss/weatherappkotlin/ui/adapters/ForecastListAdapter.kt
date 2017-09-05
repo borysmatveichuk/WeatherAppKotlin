@@ -14,7 +14,7 @@ import net.borkiss.weatherappkotlin.ui.utils.ctx
 import org.jetbrains.anko.find
 
 class ForecastListAdapter(private val weekForecast: ForecastList,
-                          private val itemClick: ForecastListAdapter.OnItemClickListener) :
+                          private val itemClick: (Forecast) -> Unit) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,7 +30,7 @@ class ForecastListAdapter(private val weekForecast: ForecastList,
         return weekForecast.size
     }
 
-    class ViewHolder(view: View, private val itemClick: OnItemClickListener) :
+    class ViewHolder(view: View, private val itemClick: (Forecast) -> Unit) :
             RecyclerView.ViewHolder(view) {
 
         private val iconView: ImageView = view.find(R.id.icon)
@@ -50,9 +50,5 @@ class ForecastListAdapter(private val weekForecast: ForecastList,
             }
 
         }
-    }
-
-    interface OnItemClickListener {
-        operator fun invoke(forecast: Forecast)
     }
 }
