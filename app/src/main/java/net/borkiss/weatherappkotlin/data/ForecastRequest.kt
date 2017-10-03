@@ -4,7 +4,7 @@ import android.util.Log
 import com.google.gson.Gson
 import java.net.URL
 
-class ForecastRequest(private val zipCode: String) {
+class ForecastRequest(private val zipCode: Long) {
 
     companion object {
         private val APP_ID = "46c8b7efcac89c7a3f1b4e463e6fe010"
