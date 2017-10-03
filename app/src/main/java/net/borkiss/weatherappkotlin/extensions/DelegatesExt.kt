@@ -1,4 +1,4 @@
-package net.borkiss.weatherappkotlin.ui.utils
+package net.borkiss.weatherappkotlin.extensions
 
 import kotlin.reflect.KProperty
 
