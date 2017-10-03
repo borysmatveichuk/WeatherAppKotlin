@@ -1,7 +1,7 @@
 package net.borkiss.weatherappkotlin.ui
 
 import android.app.Application
-import net.borkiss.weatherappkotlin.ui.utils.DelegatesExt
+import net.borkiss.weatherappkotlin.extensions.DelegatesExt
 
 class App : Application() {
 

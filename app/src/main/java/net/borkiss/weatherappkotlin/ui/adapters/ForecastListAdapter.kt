@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_forecast.view.*
 import net.borkiss.weatherappkotlin.R
 import net.borkiss.weatherappkotlin.domain.model.Forecast
 import net.borkiss.weatherappkotlin.domain.model.ForecastList
-import net.borkiss.weatherappkotlin.ui.utils.ctx
+import net.borkiss.weatherappkotlin.extensions.ctx
 import java.text.DateFormat
 import java.util.*
 
