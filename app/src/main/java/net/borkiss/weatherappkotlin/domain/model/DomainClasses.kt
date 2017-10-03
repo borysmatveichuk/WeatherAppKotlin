@@ -9,7 +9,7 @@ data class ForecastList(val city: String,
     operator fun get(position: Int) = dailyForecast[position]
 }
 
-data class Forecast(val date: String,
+data class Forecast(val date: Long,
                     val description: String,
                     val high: Int,
                     val low: Int,
