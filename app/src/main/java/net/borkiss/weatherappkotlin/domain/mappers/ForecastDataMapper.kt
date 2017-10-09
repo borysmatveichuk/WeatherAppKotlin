@@ -10,11 +10,9 @@ import net.borkiss.weatherappkotlin.domain.model.Forecast as ModelForecast
 
 class ForecastDataMapper {
 
-    fun convertFromDataModel(forecast: ForecastResult): ForecastList =
-            ForecastList(forecast.city.name,
-                    forecast.city.country,
-                    convertForecastListToDomain(forecast.list)
-            )
+    fun convertFromDataModel(zipCode: Long, forecast: ForecastResult) = with(forecast) {
+        ForecastList(zipCode, city.name, city.country, convertForecastListToDomain(list))
+    }
 
     private fun convertForecastListToDomain(list: List<Forecast>): List<ModelForecast> {
         return list.mapIndexed { i, forecast ->
