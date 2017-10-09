@@ -1,7 +1,7 @@
 package net.borkiss.weatherappkotlin.domain.mappers
 
-import net.borkiss.weatherappkotlin.data.Forecast
-import net.borkiss.weatherappkotlin.data.ForecastResult
+import net.borkiss.weatherappkotlin.data.server.Forecast
+import net.borkiss.weatherappkotlin.data.server.ForecastResult
 import net.borkiss.weatherappkotlin.domain.model.ForecastList
 import java.text.DateFormat
 import java.util.*

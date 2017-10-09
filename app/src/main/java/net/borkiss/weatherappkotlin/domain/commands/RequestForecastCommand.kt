@@ -1,6 +1,6 @@
 package net.borkiss.weatherappkotlin.domain.commands
 
-import net.borkiss.weatherappkotlin.data.ForecastRequest
+import net.borkiss.weatherappkotlin.data.server.ForecastRequest
 import net.borkiss.weatherappkotlin.domain.mappers.ForecastDataMapper
 import net.borkiss.weatherappkotlin.domain.model.ForecastList
 

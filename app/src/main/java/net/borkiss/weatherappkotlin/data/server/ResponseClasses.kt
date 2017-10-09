@@ -1,4 +1,4 @@
-package net.borkiss.weatherappkotlin.data
+package net.borkiss.weatherappkotlin.data.server
 
 data class ForecastResult(val city: City,
                           val list: List<Forecast>)
