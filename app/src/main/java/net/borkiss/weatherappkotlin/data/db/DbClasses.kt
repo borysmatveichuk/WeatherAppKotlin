@@ -1,15 +1,23 @@
 package net.borkiss.weatherappkotlin.data.db
 
-class CityForecast(val map: MutableMap<String, Any?>, val dailyForecast: List<DayForecast>) {
+class CityForecast(
+        val map: MutableMap<String, Any?>,
+        val dailyForecast: List<DayForecast>) {
+
     var _id: Long by map
     var city: String by map
-    var country: String by map
+    var сountry: String by map
 
-    constructor(id: Long, city: String, country: String, dailyForecast: List<DayForecast>)
-            : this(HashMap(), dailyForecast) {
+    constructor(
+            id: Long,
+            city: String,
+            country: String,
+            dailyForecast: List<DayForecast>
+    ) : this(HashMap(), dailyForecast) {
+
         this._id = id
         this.city = city
-        this.country = country
+        this.сountry = country
     }
 }
 

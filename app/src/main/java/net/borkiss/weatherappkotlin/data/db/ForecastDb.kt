@@ -1,5 +1,6 @@
 package net.borkiss.weatherappkotlin.data.db
 
+import net.borkiss.weatherappkotlin.domain.datasource.ForecastDataSource
 import net.borkiss.weatherappkotlin.domain.model.ForecastList
 import net.borkiss.weatherappkotlin.extensions.clear
 import net.borkiss.weatherappkotlin.extensions.parseList
@@ -9,8 +10,8 @@ import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 
 class ForecastDb(private val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.instance,
-                                   private val dataMapper: DbDataMapper = DbDataMapper()) {
-    fun requestForecastByZipCode(zipCode: Long, date: Long) = forecastDbHelper.use {
+                                   private val dataMapper: DbDataMapper = DbDataMapper()): ForecastDataSource {
+    override fun requestForecastByZipCode(zipCode: Long, date: Long) = forecastDbHelper.use {
 
                 val dailyRequest = "${DayForecastTable.CITY_ID} = ? AND ${DayForecastTable.DATE} >= ?"
                 val dailyForecast = select(DayForecastTable.NAME)

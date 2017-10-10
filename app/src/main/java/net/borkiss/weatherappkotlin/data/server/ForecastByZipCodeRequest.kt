@@ -3,7 +3,7 @@ package net.borkiss.weatherappkotlin.data.server
 import com.google.gson.Gson
 import java.net.URL
 
-class ForecastRequest(private val zipCode: Long) {
+class ForecastByZipCodeRequest(private val zipCode: Long, val gson: Gson = Gson()) {
 
     companion object {
         private val APP_ID = "46c8b7efcac89c7a3f1b4e463e6fe010"
@@ -15,6 +15,6 @@ class ForecastRequest(private val zipCode: Long) {
 
     fun execute(): ForecastResult {
         val forecastJsonStr = URL(COMPLETE_URL + zipCode).readText()
-        return Gson().fromJson(forecastJsonStr, ForecastResult::class.java)
+        return gson.fromJson(forecastJsonStr, ForecastResult::class.java)
     }
 }
