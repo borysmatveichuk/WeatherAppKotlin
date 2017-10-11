@@ -6,7 +6,7 @@ class CityForecast(
 
     var _id: Long by map
     var city: String by map
-    var сountry: String by map
+    var country: String by map
 
     constructor(
             id: Long,
@@ -17,7 +17,7 @@ class CityForecast(
 
         this._id = id
         this.city = city
-        this.сountry = country
+        this.country = country
     }
 }
 
